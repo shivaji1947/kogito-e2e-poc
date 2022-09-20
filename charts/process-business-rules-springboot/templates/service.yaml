@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "process-business-rules-springboot.fullname" . }}
+  labels:
+    {{- include "process-business-rules-springboot.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "process-business-rules-springboot.selectorLabels" . | nindent 4 }}
