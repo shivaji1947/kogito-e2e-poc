@@ -72,6 +72,7 @@ mvn clean package -Denforcer.skip=true
 
 ```
 docker build --tag=shivajifordocker/process-business-rules-springboot:1.16.0 .
+docker push shivajifordocker/process-business-rules-springboot:1.16.0
 ```
 
 ### Deploy the App
